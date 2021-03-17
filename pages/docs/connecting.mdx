@@ -45,6 +45,8 @@ Run the following command to start up a Mina node instance and connect to the li
 mina daemon --generate-genesis-proof true --peer-list-url https://storage.googleapis.com/mina-seed-lists/mainnet_seeds.txt
 ```
 
+If you have a key with stake and would like to produce blocks, also provide `--block-producer-key ~/keys/my-wallet`, replacing `~/keys/my-wallet` with the path to your private key if not the default.
+
 The `-peer-list` argument specified above refer to the seed peer address - this is the initial peer we will connect to on the network. Since Mina is a [peer-to-peer](/docs/glossary#peer-to-peer) protocol, there is no single centralized server we rely on.
 
 See [here](/docs/troubleshooting) for common issues when first running a node.

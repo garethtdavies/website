@@ -30,7 +30,7 @@ We will need to update the config file with the correct parameters. So use your 
 ```
 {
   "uploadURL": "https://us-central1-mina-mainnet-303900.cloudfunctions.net/block-producer-stats-ingest/?token=72941420a9595e1f4006e2f3565881b5",
-  "nodeURL": "http://localhost:3095"
+  "nodeURL": "http://127.0.0.1:3095"
 }
 ```
 
@@ -44,14 +44,14 @@ docker pull minaprotocol/mina-bp-stats-sidecar:latest
 
 Next we will need to setup the config file, for this tutorial we will assume you are on a Linux based host system.
 
+
+We will need to create a config file with the correct parameters. So use your prefered editor to replace the contents of `~/mina-sidecar-config.json` with the following:
+
 ```
-cd $HOME && touch ./mina-sidecar-config.json
-cat << EOF > ./mina-sidecar-config.json
 {
   "uploadURL": "https://us-central1-mina-mainnet-303900.cloudfunctions.net/block-producer-stats-ingest/?token=72941420a9595e1f4006e2f3565881b5",
   "nodeURL": "http://mina:3095"
 }
-EOF
 ```
 
 We will pass this file into the Docker container in the next step.
