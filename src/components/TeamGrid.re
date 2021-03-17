@@ -51,7 +51,7 @@ module Styles = {
 [@react.component]
 let make = (~profiles, ~switchModalState, ~setCurrentIndexAndMembers) => {
   <>
-    <h2 className=Styles.header> {React.string("Meet the Team")} </h2>
+    <h2 id="team" className=Styles.header> {React.string("Meet the Team")} </h2>
     <p className=Styles.sectionSubhead>
       {React.string(
          "Mina is an inclusive open source protocol uniting teams and technicians from San Francisco and around the world.",
