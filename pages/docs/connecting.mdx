@@ -66,6 +66,8 @@ CODA_PRIVKEY_PASS="private key password"
 EXTRA_FLAGS=" --file-log-level Debug"
 ```
 
+Afterwards, run `chmod 600 ~/.mina-env` to secure this file.
+
 You can add extra flags later to `EXTRA_FLAGS` as you see fit.
 
 Then run the following commands to start up a Mina node instance and connect to the live network:
@@ -114,6 +116,12 @@ journalctl --user-unit mina -n 1000 -f
 ```
 
 That command will show you the last 1000 lines and follow from there.
+
+<Alert>
+
+If you are running the node on a cloud virtual machine, you will need to copy the contents of the peer list at https://storage.googleapis.com/mina-seed-lists/mainnet_seeds.txt into a new local file at `~/peers.txt`
+
+</Alert>
 
 ### Docker
 
