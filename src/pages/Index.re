@@ -77,8 +77,8 @@ let make = () => {
                   </span>
                 </div>,
               linkCopy: "Learn More",
-              linkUrl: "/tech",
-              image: "/static/img/PrivateAndPowerful.png",
+              linkUrl: "/tech#projects",
+              image: "/static/img/private-gateway-transparent.png",
             },
             {
               title: "Powered by a Growing Community",
@@ -93,7 +93,7 @@ let make = () => {
                 </div>,
               linkCopy: "Join our Community",
               linkUrl: "/community",
-              image: "/static/img/ProgrammableMoney.png",
+              image: "/static/img/community-powered-transparent.png",
             },
           |])
         }

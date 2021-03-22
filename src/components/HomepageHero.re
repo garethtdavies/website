@@ -173,7 +173,6 @@ let make = (~backgroundImg) => {
                    "By design, the entire Mina blockchain is about 22kb",
                  )}
               </span>
-              // TODO: Update Link
               <Footnote
                 refNumber="1"
                 link="/blog/22kb-sized-blockchain-a-technical-reference"
