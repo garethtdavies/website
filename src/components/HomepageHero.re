@@ -75,6 +75,19 @@ module Styles = {
       ]),
     ]);
 
+  let heroSubheader =
+    merge([
+      Theme.Type.pageSubhead,
+      style([
+        position(`absolute),
+        bottom(`rem(2.)),
+        borderLeft(`px(1), `solid, Theme.Colors.digitalBlack),
+        paddingLeft(`rem(1.)),
+        maxWidth(`rem(54.)),
+        media(Theme.MediaQuery.notMobile, [bottom(`rem(5.))]),
+      ]),
+    ]);
+
   let heroImageSize =
     style([
       width(`percent(100.)),
@@ -146,6 +159,11 @@ let make = (~backgroundImg) => {
                "The world's lightest blockchain, powered by participants.",
              )}
           </h1>
+          <p className=Styles.heroSubheader>
+            {React.string(
+               {js|Mina is building a privacy-preserving gateway between the real world and crypto — and the infrastructure for the secure, democratic future we all deserve.|js},
+             )}
+          </p>
         </div>
         <div className=Styles.heroContentContainer>
           <div className=Styles.heroTextButtonContainer>
