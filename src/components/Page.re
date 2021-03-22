@@ -28,7 +28,7 @@ let make =
       ~showFooter=true,
       ~announcementCopy="Mainnet is live and Coinlist is the official token sale partner of Mina!",
       ~announcementCTACopy="Learn more",
-      ~announcementFormUrl=Constants.communityChallenges,
+      ~announcementFormUrl="/announcements/minas-mainnet-launch-marks-a-new-era-for-internet-privacy-and-data-security",
     ) => {
   let router = Next.Router.useRouter();
   let route = Option.value(route, ~default=router.route);
