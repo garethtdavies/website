@@ -24,6 +24,7 @@ module SideNav = {
         <Section title="Advanced" slug={f("advanced")}>
           <Item title="Archive Node" slug="archive-node" />
           <Item title="Archive Redundancy" slug="archive-redundancy" />
+          <Item title="Block Producer Sidecar" slug="bp-sidecar" />
           <Item title="Client SDK" slug="client-sdk" />
           <Item title="Data Querying" slug="operating-for-data" />
           <Item title="Devnet" slug="connecting-devnet" />
@@ -31,7 +32,6 @@ module SideNav = {
           <Item title="Hard Fork" slug="hard-fork" />
           <Item title="Hot/Cold Wallets" slug="hot-cold-block-production" />
           <Item title="Ledger Hardware Wallet" slug="ledger-app-mina" />
-          <Item title="Node Status Reporting" slug="node-status" />
           <Item title="Seed Peers" slug="seed-peers" />
           <Item
             title="Staking Service Guidelines"
@@ -165,6 +165,7 @@ module Dropdown = {
         <Section title="Advanced" slug={f("advanced")}>
           <Item title="Archive Node" slug="archive-node" />
           <Item title="Archive Redundancy" slug="archive-redundancy" />
+          <Item title="Block Producer Sidecar" slug="bp-sidecar" />
           <Item title="Client SDK" slug="client-sdk" />
           <Item title="Data Querying" slug="operating-for-data" />
           <Item title="Devnet" slug="connecting-devnet" />
@@ -172,7 +173,6 @@ module Dropdown = {
           <Item title="Hard Fork" slug="hard-fork" />
           <Item title="Hot/Cold Wallets" slug="hot-cold-block-production" />
           <Item title="Ledger Hardware Wallet" slug="ledger-app-mina" />
-          <Item title="Node Status Reporting" slug="node-status" />
           <Item title="Seed Peers" slug="seed-peers" />
           <Item
             title="Staking Service Guidelines"

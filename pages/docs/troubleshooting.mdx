@@ -12,7 +12,6 @@ Here are some common problems you might encounter while trying to set up the Min
 * [Block producer](#block-producer)
 * [Snark worker](#snark-worker)
 * [Logging](#logging)
-* [Testnet challenges](#testnet-challenges)
 
 ## General
 
@@ -73,7 +72,7 @@ This is necessary because sometimes macOS doesn't resolve your hostname to your 
 
 ### What hardware do I need?
 
-See the requirements for the current testnet [here](https://minaprotocol.com/docs/getting-started). Some lower-tier VPS providers may have an issue producing blocks within the slot time. If you continue to experience missing blocks, you may wish to try on more powerful hardware.
+See the requirements for the current network [here](https://minaprotocol.com/docs/getting-started). Some lower-tier VPS providers may have an issue producing blocks within the slot time. If you continue to experience missing blocks, you may wish to try on more powerful hardware.
 
 ### I would like the mina service to start on boot?
 
@@ -81,7 +80,7 @@ If you use `systemd` to manage the Mina daemon then it will not automatically re
 
 ### What should I add for CODA_PRIVKEY_PASS?
 
-When you generated a keypair and submitted it to participate in the testnet, you created a password. Use the password you created for the value of `CODA_PRIVKEY_PASS`.
+When you generated a keypair, you created a password. Use the password you created for the value of `CODA_PRIVKEY_PASS`.
 
 ### I get an error about ~/.mina-config/daemon.json missing?
 
@@ -227,7 +226,7 @@ If you have a stuck transaction due to a low fee, you will have to wait for it t
 
 ### How many transactions can be included in a block?
 
-On the current testnet, this is 128, which also includes the coinbase transaction as well as any fee transfers to pay snark workers.
+On the current network, this is 128, which also includes the coinbase transaction as well as any fee transfers to pay snark workers.
 
 ### Can I cancel a transaction?
 
@@ -295,7 +294,7 @@ The line **Next block will be produced in** lets you know the next time you have
 
 The chance of winning a block is determined by a Verifiable Random Function (VRF), with the chance of winning a block being proportional to your stake. The VRF will always return the same result no matter how many times it is run, so there is no way of improving your chance of winning a block. Other than your staking balance, it is down to luck.
 
-The stake associated with your public key is determined in advance at the start of an epoch. There is a delay in it being considered, so receiving funds, block rewards, delegating other funds, and snark worker rewards will **not** improve your chance of winning a block on this testnet as these funds will not be considered in the staking ledger for at least another full epoch (~2 weeks) by which time the testnet will (likely) be over.
+The stake associated with your public key is determined in advance at the start of an epoch. There is a delay in it being considered, so receiving funds, block rewards, delegating other funds, and snark worker rewards will **not** improve your chance of winning a block in this epoch as these funds will not be considered in the staking ledger for at least another full epoch (~2 weeks).
 
 ### Why was my block orphaned / why did I not get a block reward?
 
@@ -315,7 +314,7 @@ It is not recommended to run a snark worker on the same machine at the same time
 
 ### Why is the block rate so low / how often should there be a block?
 
-A slot on the current testnet is every 3 mins, though not all slots should have a block produced, so on average, we would expect a block every 4 mins. However, not all the stake is online and active in producing blocks, and so not all slots will have a block, and sometimes there can be long delays between blocks. As more of the stake is online and staking, this situation improves.
+A slot on the current network is every 3 mins, though not all slots should have a block produced, so on average, we would expect a block every 4 mins. However, not all the stake is online and active in producing blocks, and so not all slots will have a block, and sometimes there can be long delays between blocks. As more of the stake is online and staking, this situation improves.
 
 ### Why does O(1) Labs win most of the blocks?
 
@@ -328,10 +327,6 @@ The easiest way is to check a [block explorer](https://minaexplorer.com/). You c
 ### Why do I have a message of "No blocks won this this epoch"?
 
 See [this answer](#how-can-I-increase-my-chance-of-winning-a-block).
-
-### Are orphaned blocks considered for the challenges?
-
-Yes, during this testnet, orphaned blocks will be considered.
 
 ## Snark worker
 
@@ -391,35 +386,3 @@ The `~/.mina-config` directory contains the Mina logs. This directory contains t
 * `mina-prover.log` - This logs memory usage and batch size of the prover and is limited to 128 MiB and rotates via a single log file.
 * `mina-verifier.log` - This logs memory usage and batch size of the verifier and is limited to 128 MiB and rotates via a single log file.
 * `mina.version` - This file contains the Git SHA of the running daemon.
-
-## Testnet Challenges
-
-### I lost the password for my private key I submitted for the testnet?
-
-If you lost the password for the private key, then there is nothing that can be done to recover it. If you were selected for the testnet, the ledger may have a balance associated with this public key, and it isn't possible to move this to a new key. You can still participate, however, by creating a new keypair and getting a node running and synced. You won't have a balance on the key, so you will not win any blocks but can participate in running a node and in the other community challenges such as running a snark worker.
-
-Always keep a copy of your private key you generated (likely called `my-wallet` in a folder named `keys`) and the associated password!
-
-### I completed a challenge, and the leaderboard has not been updated?
-
-As per the message in the #leaderboard-qa channel on Discord, please be patient!
-
-> We're still working on a fix for the leaderboard. We have recovered the block data for the service that went down, and we're in the process of restoring the Leaderboard service. You can expect some updates soon.
-
-### I was on the waitlist, and now my balance displays 0?
-
-If you do not have a balance for your private key, check that you are using the same key that you used to register for the testnet.
-
-Not all waitlist participants have a balance, and if you are one of them, you can still sync a node and request funds from the faucet or other community members. Your node will need to be synced before any balance from the faucet or community members will be visible via `mina accounts list`. There may be additional stake redistributions at a later time, assuming you have a synced node.
-
-### Do I need to send 50 tx to different addresses / to what address should I send?
-
-You can send the transactions to any address. It doesn't matter what fees/amounts/addresses you use - just 50 transactions from your public key. The key has to be the one registered for the testnet as it is associated with your Discord ID.
-
-### Is there a guide to completing the testnet challenges?
-
-See [this guide](https://icohigh.gitbook.io/mina-node-testnet/) by community member @Ducca.
-
-### Where can I find a list of all the current testnet challenges?
-
-See the post [here](https://forums.minaprotocol.com/t/testnet-release-4-1-challenges/597).
