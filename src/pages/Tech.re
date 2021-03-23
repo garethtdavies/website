@@ -18,8 +18,8 @@ module Styles = {
   let sectionContainer = bg =>
     style([
       background(`url(bg)),
+      padding2(~v=`rem(4.), ~h=`rem(2.)),
       backgroundSize(`cover),
-      padding2(~v=`rem(4.), ~h=`zero),
       media(
         Theme.MediaQuery.desktop,
         [paddingTop(`rem(4.)), paddingBottom(`rem(10.))],
@@ -427,38 +427,6 @@ module Projects = {
           />
         </div>
         <Spacer height=3. />
-        /*
-         <hr className=Styles.divider />
-         <Spacer height=1. />
-         <h3 className=Theme.Type.h3> {React.string("Built on Mina")} </h3>
-         <Spacer height=3. />
-         <img src="/static/img/AboutHeroTabletBackground.jpg" />
-         <Spacer height=2. />
-         <ProjectCopy
-           title="Figment Block Explorer"
-           description="This open source Mina block explorer provides aggregated network data to enable users to view transactions, blocks, and accounts."
-           url="/"
-         />
-         <Spacer height=2. />
-
-         <div className=Styles.projectContainer>
-           <img src="/static/img/AboutHeroTabletBackground.jpg" />
-           <ProjectCopy
-             title="Mina Mobile Wallet"
-             description={js|This wallet gives users full access to Mina tokens on their phone — so they can transact any time, anywhere.|js}
-             url="/"
-           />
-         </div>
-         <Spacer height=2. />
-         <div className=Styles.projectContainer>
-           <img src="/static/img/AboutHeroTabletBackground.jpg" />
-           <ProjectCopy
-             title="Faucet Bot"
-             description="Built on Mina and integrated with Discord, this tool automatically distributes Mina tokens to participants who need them for Testnet challenges and activities."
-             url="/"
-           />
-         </div>
-         <Spacer height=4. /> */
         <hr className=Styles.divider />
         <Spacer height=1. />
         <h3 className=Theme.Type.h3>
