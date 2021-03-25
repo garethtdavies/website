@@ -60,6 +60,12 @@ EXTRA_FLAGS=" --file-log-level Debug"
 
 You can add extra flags later to `EXTRA_FLAGS` as you see fit.
 
+Mina will be looking for its peers in a file called `~/peers.txt`, so run the following command to create it:
+
+```
+curl https://storage.googleapis.com/mina-seed-lists/mainnet_seeds.txt > ~/peers.txt
+```
+
 Then run the following commands to start up a Mina node instance and connect to the live network:
 
 ```
